@@ -16,7 +16,8 @@
     margin-left: auto;
     margin-right: 20px;
 }
-.main-header li{
+.main-header nav li{
+    display: inline-block;
     list-style: none;
     display: flex;
     gap: 20px;
@@ -63,4 +64,56 @@ body {
                 display: block;
                 width: 100%;
             }
+        }
+
+
+
+        /*fexbox*/
+        .flex-container{
+            display: flex;
+                  flex-direction: column;
+
+            width: 100%;            /* ensure container spans full available width */
+            gap: 20px;              /* spacing between boxes (use gap instead of child margins) */
+            padding: 10px;
+            box-sizing: border-box;
+            flex-wrap: wrap;        /* allow wrapping on very small screens */
+        }
+
+        .flex-container > div{
+            flex: 1 1 0;            /* each box grows equally; three boxes share 100% */
+            min-width: 180px;       /* prevents boxes from shrinking too small */
+            background-color: red;
+            margin: 0;              /* remove margins that break total width calculation */
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Optional: ensure they stack on narrow screens (adjust breakpoint as needed) */
+        @media (max-width: 600px) {
+            .flex-container > div {
+                flex: 1 1 100%;
+            }
+        }
+
+        .flex-container-horizontal
+        {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;              /* spacing between boxes (use gap instead of child margins) */
+            padding: 10px;
+            box-sizing: border-box;
+            flex-wrap: wrap;        /* allow wrapping on very small screens */
+        }
+        .flex-container-horizontal > div{
+            flex: 1 1 0;            /* each box grows equally; three boxes share 100% */
+            min-width: 180px;       /* prevents boxes from shrinking too small */
+            background-color: blue;
+            margin: 0;              /* remove margins that break total width calculation */
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            box-sizing: border-box;
         }
